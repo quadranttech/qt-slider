@@ -1,6 +1,7 @@
 
 function QTSlider(){
 
+    /* settings variables */
     var sliderWidth = 720;
     var sliderHeight = 400;
     var animationSpeed = 1000;
@@ -11,6 +12,8 @@ function QTSlider(){
     var currentSlide = 1;
     var interval;
     var noOfSlide;
+    var list_of_animation_possible=["slide-left" , "slide-right" , "slide-down" , "slide-top" , "fade-out" , "fade-in" ]
+
     //cache DOM elements
     var slider,slideContainer,slides;
 
@@ -20,7 +23,7 @@ function QTSlider(){
         if(undefined != slider_height){     sliderHeight = slider_height;       }
         if(undefined != animation_speed){   animationSpeed = animation_speed;   }
         if(undefined != pause_time){        pause = pause_time;                 }
-        if(undefined != animation_type){    animationType = animation_type;     }
+        if(undefined != animation_type && $.inArray( animation_type , list_of_animation_possible ) ){    animationType = animation_type;     }
 
     }
 
